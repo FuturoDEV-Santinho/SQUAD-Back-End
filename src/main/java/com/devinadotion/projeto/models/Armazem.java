@@ -4,7 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @ToString @EqualsAndHashCode
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Table(name = "tb_armazem")
 public class Armazem {
     @Id
@@ -18,10 +23,6 @@ public class Armazem {
     private TipoAnimal tipoAnimal;
 
     public boolean possuiProdutos() {
-        // Implemente a lógica para verificar se o armazém possui produtos associados
-        // Retorne true se houver produtos, false caso contrário
-        // Exemplo:
-        // return !produtos.isEmpty(); // Considerando que o armazém possui uma lista de produtos
         return false;
     }
 }
