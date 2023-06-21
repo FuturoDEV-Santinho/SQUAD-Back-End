@@ -1,10 +1,16 @@
 package com.devinadotion.projeto.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
 @Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
