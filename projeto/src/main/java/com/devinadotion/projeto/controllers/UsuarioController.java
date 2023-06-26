@@ -12,15 +12,14 @@ import java.util.Map;
 @RestController
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final UsuarioService usuarioService;
 
     @Autowired
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping("/usuarios")
+    @PostMapping("/usuarios/cadastro")
     public Usuario criarUsuario(@RequestBody Map<String, String> dadosUsuario) {
         String nome = dadosUsuario.get("nome");
         String email = dadosUsuario.get("email");
