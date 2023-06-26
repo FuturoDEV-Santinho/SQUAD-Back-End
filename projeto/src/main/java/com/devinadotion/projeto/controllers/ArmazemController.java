@@ -3,6 +3,8 @@ package com.devinadotion.projeto.controllers;
 import com.devinadotion.projeto.models.Armazem;
 import com.devinadotion.projeto.services.ArmazemService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,15 +25,23 @@ public class ArmazemController {
         return armazemService.listarArmazens();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Armazem> buscarArmazemPorId(@PathVariable Long id) {
+        try{
+            Armazem armazem = armazemService.buscarArmazemPorId(id);
+            if (armazem != null){
+                return ResponseEntity.ok(armazem);
+            } else {
+                return ResponseEntity.notFound().build();
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
     @PostMapping
     public Armazem cadastrarArmazem(@RequestBody Armazem armazem) {
         return armazemService.cadastrarArmazem(armazem);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Armazem> buscarArmazemPorId(@PathVariable Long id) {
-        Armazem armazem = armazemService.buscarArmazemPorId(id);
-        return ResponseEntity.ok(armazem);
     }
 
     @PutMapping("/{id}")
