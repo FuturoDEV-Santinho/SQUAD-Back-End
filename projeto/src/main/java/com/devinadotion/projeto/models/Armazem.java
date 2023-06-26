@@ -18,13 +18,8 @@ public class Armazem {
     private TipoAnimal tipoAnimal;
 
     public boolean possuiProdutos() {
-        // Implemente a lógica para verificar se o armazém possui produtos associados
-        // Retorne true se houver produtos, false caso contrário
-        // Exemplo:
-        // return !produtos.isEmpty(); // Considerando que o armazém possui uma lista de produtos
         return false;
     }
-
 
     //criação dos Getter, Setter e Condtrutores
     public Long getId() {
@@ -50,6 +45,4 @@ public class Armazem {
     public void setTipoAnimal(TipoAnimal tipoAnimal) {
         this.tipoAnimal = tipoAnimal;
     }
-
-
 }
