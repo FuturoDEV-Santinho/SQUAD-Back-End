@@ -12,21 +12,21 @@ Realiza o login de um usuário.
 
 **URL**: `POST /usuarios/login`
 
-- **Parâmetros**:
+**Parâmetros**:
 
-  - `email` (string, obrigatório): O email do usuário.
-  - `senha` (string, obrigatório): A senha do usuário.
+- `email` (string, obrigatório): O email do usuário.
+- `senha` (string, obrigatório): A senha do usuário.
 
-- **Exemplo de Requisição**:
-  POST /usuarios/login?email=teste@teste.com&senha=teste
+**Exemplo de Requisição**:
+POST /usuarios/login?email=teste@teste.com&senha=teste
 
 #### Cadastro de Usuário
 
 Realiza o cadastro de um novo usuário.
 
-- **URL**: `POST /usuarios/cadastro`
+**URL**: `POST /usuarios/cadastro`
 
-- **Corpo da Requisição** (JSON):
+**Corpo da Requisição** (JSON):
 
 ```json
 {
@@ -36,9 +36,9 @@ Realiza o cadastro de um novo usuário.
 }
 ```
 
-## Armazéns
+### Armazéns
 
-### Adiciona Armazém
+#### Adiciona Armazém
 
 Adiciona um novo armazém.
 
@@ -53,19 +53,19 @@ Adiciona um novo armazém.
 }
 ```
 
-## Lista Armazém
+#### Lista Armazém
 
 Lista todos os armazéns cadastrados.
 
 **URL:** `GET /armazem`
 
-## Edita Armazém
+#### Edita Armazém
 
 Edita um armazém existente.
 
 **URL:** `PUT /armazem/{id}`
 
-_Parâmetros:_
+**Parâmetros:**
 
 `id` (inteiro, obrigatório): O ID do armazém a ser editado.
 **Corpo da Requisição** (JSON):
@@ -77,22 +77,25 @@ _Parâmetros:_
 }
 ```
 
-## Exclui Armazém
+#### Exclui Armazém
 
 Exclui um armazém existente.
 
 **URL:** `DELETE /armazem/{id}`
 
-`Parâmetros`:
+**Parâmetros:**
 
-id (inteiro, obrigatório): O ID do armazém a ser excluído.
-Produtos
-Adiciona Produto
+`id` (inteiro, obrigatório): O ID do armazém a ser excluído.
+
+### Produtos
+
+#### Adiciona Produto
+
 Adiciona um novo produto.
 
-URL: POST /produto
+**URL:** `POST /produto`
 
-Corpo da Requisição (JSON):
+**Corpo da Requisição** (JSON):
 
 ```json
 {
@@ -107,18 +110,21 @@ Corpo da Requisição (JSON):
 }
 ```
 
-Lista Produto
+#### Lista Produto
+
 Lista todos os produtos em estoque.
 
-URL: GET /produto/estoque
-Edita Produto
+**URL:** `GET /produto/estoque`
+
+#### Edita Produto
+
 Edita um produto em estoque.
 
-URL: PUT /produto/{id}/estoque
+**URL:** `PUT /produto/{id}/estoque`
 
-Parâmetros:
+**Parâmetros:**
 
-id (inteiro, obrigatório): O ID do produto a ser editado.
+`id` (inteiro, obrigatório): O ID do produto a ser editado.
 Corpo da Requisição (JSON):
 
 ```json
@@ -128,28 +134,34 @@ Corpo da Requisição (JSON):
 }
 ```
 
-Exclui Produto
+#### Exclui Produto
+
 Exclui um produto do estoque.
 
-URL: DELETE /produto/{id}/estoque
+**URL:** `DELETE /produto/{id}/estoque`
 
-Parâmetros:
+**Parâmetros:**
 
-id (inteiro, obrigatório): O ID do produto a ser excluído.
-Dashboard
-Busca Todos
+`id` (inteiro, obrigatório): O ID do produto a ser excluído.
+
+### Dashboard
+
+#### Busca Todos
+
 Busca informações sobre todos os animais.
 
-URL: GET /animais/agruparTodos
-Busca Específica
+**URL:** `GET /animais/agruparTodos`
+
+#### Busca Específica
+
 Busca informações sobre animais específicos.
 
-URL: GET /animais/{tipoAnimal}/{categoria}
+**URL:** `GET /animais/{tipoAnimal}/{categoria}`
 
-Parâmetros:
+**Parâmetros:**
 
-tipoAnimal (string, obrigatório): O tipo de animal (exemplo: "Gato").
-categoria (string, obrigatório): A categoria do animal (exemplo: "Adulto").
+`tipoAnimal` (string, obrigatório): O tipo de animal (exemplo: "Gato").
+`categoria` (string, obrigatório): A categoria do animal (exemplo: "Adulto").
 
 # Considerações Finais
 
