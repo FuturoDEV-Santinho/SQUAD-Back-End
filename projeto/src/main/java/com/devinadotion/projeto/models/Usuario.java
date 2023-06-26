@@ -7,7 +7,12 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 @Entity
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor @EqualsAndHashCode @ToString
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode
+@ToString
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,7 +21,6 @@ public class Usuario {
     private String nome;
     private String email;
     private String senha;
-
 
     //criação dos Getter, Setter e Condtrutores
     public Long getId() {
@@ -50,6 +54,4 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
-
 }
