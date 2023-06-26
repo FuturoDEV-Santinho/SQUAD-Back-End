@@ -24,13 +24,12 @@ public class ArmazemService {
         return armazemRepository.findAll();
     }
 
-    public Armazem cadastrarArmazem(Armazem armazem) {
-        return armazemRepository.save(armazem);
+    public Armazem buscarArmazemPorId(Long id) {
+        return armazemRepository.findById(id).orElse(null);
     }
 
-    public Armazem buscarArmazemPorId(Long id) {
-        return armazemRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Armazém não encontrado"));
+    public Armazem cadastrarArmazem(Armazem armazem) {
+        return armazemRepository.save(armazem);
     }
 
     public Armazem editarArmazem(Long id, Armazem armazem) {
@@ -53,7 +52,7 @@ public class ArmazemService {
         if (armazemOptional.isPresent()) {
             armazemRepository.deleteById(id);
         } else {
-            throw new IllegalArgumentException("Armazém não encontrado");
+            throw new IllegalArgumentException("Armazém não encontrado.");
         }
     }
 }
