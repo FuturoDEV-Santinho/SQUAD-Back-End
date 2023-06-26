@@ -1,9 +1,14 @@
 package com.devinadotion.projeto.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString @EqualsAndHashCode
 @Data
 public class Produto {
     @Id
@@ -17,7 +22,6 @@ public class Produto {
 
     @ManyToOne
     private Armazem armazem;
-
 
     //criação dos Getter, Setter e Condtrutores
     public Long getId() {
@@ -75,18 +79,4 @@ public class Produto {
     public void setArmazem(Armazem armazem) {
         this.armazem = armazem;
     }
-
-    public Produto(Long id, String nomeArmazem, TipoAnimal tipoAnimal, TipoProduto tipoProduto, int quantidade, Categoria categoria, Armazem armazem) {
-        this.id = id;
-        this.nomeArmazem = nomeArmazem;
-        this.tipoAnimal = tipoAnimal;
-        this.tipoProduto = tipoProduto;
-        this.quantidade = quantidade;
-        this.categoria = categoria;
-        this.armazem = armazem;
-    }
-
-    public Produto() {
-    }
 }
-
